@@ -1,0 +1,366 @@
+/* ══════════════════════════════════════════
+   VALORANT NEWS — style2.css (Detail Pages)
+   Tối ưu: xoá trùng lặp, gộp override theo trang
+══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+/* ─── BIẾN MÀU ─── */
+:root {
+    --red:     #ff4655;
+    --red-dim: rgba(255, 70, 85, 0.12);
+    --bg:      #06080f;
+    --surface: rgba(13, 18, 30, 0.95);
+    --border:  rgba(255, 255, 255, 0.07);
+    --text:    #e2e8f0;
+    --muted:   #64748b;
+    --gold:    #c8a96e;
+}
+
+/* ─── BASE ─── */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 900px; height: 500px;
+    background: radial-gradient(ellipse, rgba(255, 70, 85, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(255, 70, 85, 0.4); border-radius: 3px; }
+
+/* ─── NAVBAR ─── */
+.navbar {
+    background: rgba(6, 8, 15, 0.9) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    color: #fff !important;
+    padding: 16px 0;
+}
+
+.navbar-brand span { color: var(--red); }
+
+.nav-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted) !important;
+    padding: 20px 16px !important;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 2px;
+    background: var(--red);
+    transition: width 0.3s;
+}
+
+.nav-link:hover             { color: #fff !important; }
+.nav-link:hover::after      { width: 60%; }
+.nav-link.active            { color: #fff !important; }
+.nav-link.active::after     { width: 60%; }
+
+/* ─── ARTICLE LAYOUT ─── */
+.article-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 0 80px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── TIÊU ĐỀ ─── */
+.title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.title-accent {
+    display: block;
+    width: 56px; height: 3px;
+    background: var(--red);
+    margin-top: 12px;
+    margin-bottom: 32px;
+    border-radius: 2px;
+}
+
+/* ─── ẢNH BÀI VIẾT ─── */
+.article-img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+/* ─── META TAGS ─── */
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.meta-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+}
+
+.meta-patch { background: rgba(255, 70, 85, 0.15);  color: var(--red);  border: 1px solid rgba(255, 70, 85, 0.3); }
+.meta-guide { background: rgba(253, 224, 71, 0.1);  color: #fde047;     border: 1px solid rgba(253, 224, 71, 0.25); }
+.meta-lore  { background: rgba(192, 132, 252, 0.1); color: #c084fc;     border: 1px solid rgba(192, 132, 252, 0.25); }
+.meta-map   { background: rgba(125, 211, 252, 0.1); color: #7dd3fc;     border: 1px solid rgba(125, 211, 252, 0.25); }
+
+/* ─── ARTICLE SECTION (mặc định: màu đỏ) ─── */
+.article-section {
+    margin-bottom: 36px;
+    background: rgba(13, 18, 30, 0.6);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    padding: 24px 28px;
+}
+
+.article-section h2,
+.article-section h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.article-section ul {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.article-section li {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 20px;
+    position: relative;
+}
+
+.article-section li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 600;
+}
+
+.article-section p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.article-section p:last-child { margin-bottom: 0; }
+
+b        { color: #fff; font-weight: 700; }
+em, i    { color: var(--gold); font-style: italic; }
+
+/* ─── OVERRIDE THEO TRANG ─── */
+
+/* chitiet3.html — Lore / Omen (tím) */
+.theme-lore .article-section            { border-left-color: #c084fc; }
+.theme-lore .article-section h2,
+.theme-lore .article-section h3         { color: #c084fc; }
+
+/* chitiet2.html — Maps (xanh dương) */
+.theme-map .article-section             { border-left-color: #7dd3fc; }
+.theme-map .article-section h3          { color: #7dd3fc; }
+
+/* chitiet4.html — Guide (vàng) */
+.theme-guide .article-section           { border-left-color: #fde047; }
+.theme-guide .article-section h2,
+.theme-guide .article-section h3        { color: #fde047; }
+
+/* ─── QUOTE BLOCK (Lore) ─── */
+.quote-block {
+    border-left: 3px solid rgba(192, 132, 252, 0.5);
+    padding: 16px 24px;
+    margin: 16px 0;
+    background: rgba(192, 132, 252, 0.05);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: #c084fc;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+}
+
+/* ─── GUIDE: SECTION DIVIDER ─── */
+.section-divider {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-divider::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, rgba(253, 224, 71, 0.3), transparent);
+}
+
+/* ─── GUIDE: DIFFICULTY BADGES ─── */
+.difficulty-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+
+.diff-basic { background: rgba(34, 197, 94, 0.15);  color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
+.diff-mid   { background: rgba(234, 179, 8, 0.15);  color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3); }
+.diff-hard  { background: rgba(255, 70, 85, 0.15);  color: var(--red); border: 1px solid rgba(255, 70, 85, 0.3); }
+
+/* ─── GUIDE: TIP NOTE ─── */
+.tip-note {
+    background: rgba(253, 224, 71, 0.05);
+    border: 1px solid rgba(253, 224, 71, 0.15);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: #fde047;
+    font-weight: 300;
+}
+
+/* ─── BACK BUTTON ─── */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 32px;
+}
+
+.btn-back:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ─── FORM STYLES (submit.html) ─── */
+.news-editor-page  { background: var(--bg); min-height: 100vh; }
+
+.news-editor-card {
+    background: rgba(13, 18, 30, 0.95);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 70, 85, 0.25);
+    box-shadow: 0 0 60px rgba(255, 70, 85, 0.08), 0 20px 60px rgba(0, 0, 0, 0.7);
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background: rgba(6, 8, 15, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    transition: all 0.2s;
+}
+
+.form-control::placeholder { color: rgba(255, 255, 255, 0.25); }
+
+.form-control:focus {
+    background: rgba(6, 8, 15, 1);
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(255, 70, 85, 0.15);
+    color: #fff;
+    outline: none;
+}
+
+textarea.form-control { resize: vertical; min-height: 160px; }

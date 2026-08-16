@@ -1,0 +1,138 @@
+{
+  "ticker": [
+    "Patch 11.11 – Cập nhật sửa lỗi agents",
+    "Corrode – Bản đồ mới đã ra mắt",
+    "Harbor Rework – Gameplay Update V25",
+    "VCT 2025 – Champions đang diễn ra",
+    "Omen Lore – Bí ẩn đằng sau bóng tối"
+  ],
+  "hero": {
+    "tag": "Patch mới nhất",
+    "title": "Phiên bản",
+    "titleAccent": "11.11",
+    "description": "Cập nhật sửa lỗi agents, điều chỉnh bản đồ và nhiều thay đổi gameplay quan trọng.",
+    "btnText": "Xem patch notes →",
+    "btnLink": "chitiet1.html",
+    "version": "V 11.11"
+  },
+  "skins": {
+    "icon": "🔫",
+    "title": "Skin Súng Xịn",
+    "tag": "SKIN SHOWCASE",
+    "sourceLabel": "Dữ liệu giá & hình ảnh: OP.GG Valorant Skins",
+    "sourceLink": "https://op.gg/vi/valorant/skins",
+    "items": [
+      {
+        "weapon": "Bandit",
+        "name": "Bandit Rogue",
+        "tier": "Phiên Bản Độc Quyền",
+        "tierClass": "tier-exclusive",
+        "price": "2,175",
+        "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/F8CD2463-4DE6-2F96-561B-C0AB717995F9.png",
+        "tierIcon": "https://c-valorant-api.op.gg/Assets/ContentTiers/E046854E-406C-37F4-6607-19A9BA8426FC.svg"
+      },
+      {
+        "weapon": "Bandit",
+        "name": "Bandit Reaver",
+        "tier": "Phiên Bản Cao Cấp",
+        "tierClass": "tier-premium",
+        "price": "1,775",
+        "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/FD2F03BD-4DE4-653B-A33A-46800191601C.png",
+        "tierIcon": "https://c-valorant-api.op.gg/Assets/ContentTiers/60BCA009-4182-7998-DEE7-B8A2558DC369.svg"
+      },
+      {
+        "weapon": "Bandit",
+        "name": "Bandit SilkLeaf",
+        "tier": "Phiên Bản Sang Chảnh",
+        "tierClass": "tier-deluxe",
+        "price": "1,275",
+        "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/6E96C515-415A-D7C6-270E-8C85231E8363.png",
+        "tierIcon": "https://c-valorant-api.op.gg/Assets/ContentTiers/0CEBB8BE-46D7-C12A-D306-E9907BFC5A25.svg"
+      },
+      {
+        "weapon": "Bandit",
+        "name": "Bandit Crash Out",
+        "tier": "Phiên Bản Tuyển Chọn",
+        "tierClass": "tier-select",
+        "price": "875",
+        "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/AA3CC912-4A9C-7D99-B458-CCAE301A87BE.png",
+        "tierIcon": "https://c-valorant-api.op.gg/Assets/ContentTiers/12683D76-48D7-84A3-4E09-6985794F0445.svg"
+      },
+      {
+        "weapon": "Bandit",
+        "name": "Bandit Soulburst",
+        "tier": "Phiên Bản Tuyển Chọn",
+        "tierClass": "tier-select",
+        "price": "875",
+        "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/716281C1-454D-D454-142D-03AE37B913CE.png",
+        "tierIcon": "https://c-valorant-api.op.gg/Assets/ContentTiers/12683D76-48D7-84A3-4E09-6985794F0445.svg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "patch",
+      "icon": "📰",
+      "title": "Patch Notes",
+      "tag": "11.11",
+      "articles": [
+        {
+          "id": 1,
+          "category": "Patch",
+          "categoryClass": "cat-patch",
+          "image": "Harbor-Rework-Valorant.webp",
+          "imageAlt": "Agent fixes",
+          "title": "🔧 Sửa lỗi một số Agent",
+          "summary": "Sửa lỗi khiến 'Bão Tố Nổi Dậy' của Harbor ảnh hưởng đến các agents đang dịch chuyển. Cập nhật cho Veto, Viper và Vyse.",
+          "link": "chitiet1.html",
+          "badge": "AGENTS",
+          "badgeColor": ""
+        },
+        {
+          "id": 2,
+          "category": "Patch",
+          "categoryClass": "cat-patch",
+          "image": "f97925ac41e395725b0a62e577244af52c17aefe-1920x1080.jpg",
+          "imageAlt": "Map fixes",
+          "title": "🗺️ Sửa lỗi một số Map",
+          "summary": "Sửa Lưới Trọng Lực của Deadlock hạ gục ngay các agents đang dịch chuyển tại Abyss. Cập nhật Corrode và Haven.",
+          "link": "chitiet2.html",
+          "badge": "MAPS",
+          "badgeColor": "color: #7dd3fc; background: rgba(125,211,252,0.1); border-color: rgba(125,211,252,0.25);"
+        }
+      ]
+    },
+    {
+      "id": "featured",
+      "icon": "🎮",
+      "title": "Thông Tin Thú Vị",
+      "tag": "FEATURED",
+      "articles": [
+        {
+          "id": 3,
+          "category": "Lore",
+          "categoryClass": "cat-lore",
+          "image": "thumb-1920-1319447.jpeg",
+          "imageAlt": "Omen",
+          "title": "👁️ Omen – Nỗi Đau Không Hình Dạng",
+          "summary": "Omen không còn là con người hoàn chỉnh. Anh ta là kết quả của một thí nghiệm liên quan đến Radianite – và ngay cả hắn cũng không nhớ mình từng là ai.",
+          "link": "chitiet3.html",
+          "badge": "CONTROLLER",
+          "badgeColor": "color: #c084fc; background: rgba(192,132,252,0.1); border-color: rgba(192,132,252,0.25);"
+        },
+        {
+          "id": 4,
+          "category": "Guide",
+          "categoryClass": "cat-guide",
+          "image": "maxresdefault.jpg",
+          "imageAlt": "Peek guide",
+          "title": "😍 Các Kiểu Peek Đỉnh Cao",
+          "summary": "Bạn muốn lên Radiant? Xem ngay những kỹ thuật peek từ Jiggle đến Ferrari Peek – ló ra là lụm đầu đối thủ ngay lập tức.",
+          "link": "chitiet4.html",
+          "badge": "GUIDE",
+          "badgeColor": "color: #fde047; background: rgba(253,224,71,0.1); border-color: rgba(253,224,71,0.25);"
+        }
+      ]
+    }
+  ]
+}

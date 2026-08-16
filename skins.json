@@ -1,0 +1,198 @@
+{
+  "pageTag": "SKIN SHOWCASE",
+  "pageTitle": "Skin Súng Xịn",
+  "pageSubtitle": "Tuyển chọn những dòng skin đẹp nhất Valorant — ưu tiên hạng Độc Quyền (vàng) và Sang Chảnh (tím) cho từng loại súng.",
+  "sourceLabel": "Hình ảnh & dữ liệu tham khảo từ",
+  "sources": [
+    {
+      "name": "OP.GG Valorant Skins",
+      "link": "https://op.gg/vi/valorant/skins"
+    },
+    {
+      "name": "ValorantInfo.com",
+      "link": "https://valorantinfo.com/weapons/vandal"
+    }
+  ],
+  "weapons": [
+    {
+      "weaponName": "Vandal",
+      "weaponTag": "Rifle",
+      "skins": [
+        {
+          "name": "Rogue Vandal",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/us/rogue-vandal_valorant_full_skin_3072364.webp"
+        },
+        {
+          "name": "Xerofang Vandal",
+          "tier": "Deluxe",
+          "tierClass": "tier-deluxe",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/xerofang-vandal_valorant_full_skin_1230030.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Phantom",
+      "weaponTag": "Rifle",
+      "skins": [
+        {
+          "name": "Ayakashi Phantom",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/vn/ayakashi-phantom-level-4variant-1-red_valorant_full_skin_2635062.webp"
+        },
+        {
+          "name": "Recon Phantom",
+          "tier": "Deluxe",
+          "tierClass": "tier-deluxe",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/recon-phantom-level-4variant-1-red-camo_valorant_full_skin_154456.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Guardian",
+      "weaponTag": "Rifle",
+      "skins": [
+        {
+          "name": "Gaia's Vengeance Guardian",
+          "tier": "Deluxe",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/vn/gaias-vengeance-guardian_valorant_full_skin_200272.webp"
+        },
+        {
+          "name": "Kuronami Guardian",
+          "tier": "Deluxe",
+          "tierClass": "tier-deluxe",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/vn/kuronami-guardian_valorant_full_skin_3023550.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Bulldog",
+      "weaponTag": "Rifle",
+      "skins": [
+        {
+          "name": "Prelude to Chaos Bulldog",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/us/prelude-to-chaos-bulldog_valorant_full_skin_2452083.webp"
+        },
+        {
+          "name": "Aemondir Bulldog",
+          "tier": "Deluxe",
+          "tierClass": "tier-deluxe",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/aemondir-bulldog-level-3variant-3-obsidian_valorant_full_skin_1454594.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Classic",
+      "weaponTag": "Sidearms",
+      "skins": [
+        {
+          "name": "Blackthorn Classic",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/us/blackthorn-classic_valorant_full_skin_2875101.webp"
+        },
+        {
+          "name": "Divergence Classic",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/divergence-classic-level-4variant-2-blue_valorant_full_skin_2238838.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Shorty",
+      "weaponTag": "Sidearms",
+      "skins": [
+        {
+          "name": "NeoFrontier Shorty",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/us/neo-frontier-shorty_valorant_full_skin_3330056.webp"
+        },
+        {
+          "name": "Araxys Shorty",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/araxys-shorty-level-4variant-2-black_valorant_full_skin_609615.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Ghost",
+      "weaponTag": "Sidearms",
+      "skins": [
+        {
+          "name": "ValiantHero Ghost",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/us/valiant-hero-ghost_valorant_full_skin_1053027.webp"
+        },
+        {
+          "name": "Ego Ghost",
+          "tier": "Deluxe",
+          "tierClass": "tier-deluxe",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/ego-ghost-level-2variant-1-red_valorant_full_skin_154682.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Sheriff",
+      "weaponTag": "Sidearms",
+      "skins": [
+        {
+          "name": "Imperium Sheriff",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://valorantinfo.com/images/us/imperium-sheriff_valorant_full_skin_945910.webp"
+        },
+        {
+          "name": "Ora by OneTap Sheriff",
+          "tier": "Exclusive",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Tím",
+          "image": "https://valorantinfo.com/images/us/ora-by-onetap-sheriff_valorant_full_skin_2543655.webp"
+        }
+      ]
+    },
+    {
+      "weaponName": "Bandit",
+      "weaponTag": "Sidearms",
+      "skins": [
+        {
+          "name": "Reaver Bandit",
+          "tier": "Độc Quyền",
+          "tierClass": "tier-exclusive",
+          "tierColor": "Vàng",
+          "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/FD2F03BD-4DE4-653B-A33A-46800191601C.png"
+        },
+        {
+          "name": "Rogue Bandit",
+          "tier": "Sang Chảnh",
+          "tierClass": "tier-deluxe",
+          "tierColor": "Tím",
+          "image": "https://c-valorant-api.op.gg/Assets/WeaponSkins/F8CD2463-4DE6-2F96-561B-C0AB717995F9.png"
+        }
+      ]
+    }
+  ]
+}
