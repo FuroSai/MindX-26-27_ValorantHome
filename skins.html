@@ -179,6 +179,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="submit.html">Gửi tin tức</a>
                     </li>
+                    <!-- Vùng user/tài khoản được render động bởi JS -->
+                    <li class="nav-item ms-2" id="navUserAuthArea"></li>
                 </ul>
             </div>
         </div>
@@ -210,32 +212,29 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="auth.js"></script>
-    <script>
+    <!-- Scripts (type="module" bắt buộc vì Auth dùng Firebase ES modules) -->
+    <script type="module">
+        import Auth from './auth.js';
+
         // ── Navbar: hiển thị user hay nút tài khoản ──
-        const navUserArea = document.getElementById('navUserArea');
-        const currentUser = Auth.getCurrentUser();
+        const navUserAuthArea = document.getElementById('navUserAuthArea');
 
-        if (currentUser) {
-            navUserArea.innerHTML += `
-            <li class="nav-item">
-                <span class="user-chip"><span class="user-dot"></span>${currentUser}</span>
-            </li>
-            <li class="nav-item ms-2">
-                <button class="btn-logout" onclick="doLogout()">Đăng xuất</button>
-            </li>
-        `;
-        } else {
-            navUserArea.innerHTML += `
-            <li class="nav-item ms-2">
-                <a class="btn-nav-user" href="dangnhap.html">Tài khoản</a>
-            </li>
-        `;
-        }
+        Auth.onAuthChange((user) => {
+            if (user) {
+                navUserAuthArea.innerHTML = `
+                    <span class="user-chip"><span class="user-dot"></span>${user.username || user.email}</span>
+                    <button class="btn-logout ms-2" id="btnLogout">Đăng xuất</button>
+                `;
+                document.getElementById('btnLogout').addEventListener('click', doLogout);
+            } else {
+                navUserAuthArea.innerHTML = `
+                    <a class="btn-nav-user" href="dangnhap.html">Tài khoản</a>
+                `;
+            }
+        });
 
-        function doLogout() {
-            Auth.logout();
+        async function doLogout() {
+            await Auth.logout();
             location.reload();
         }
 
