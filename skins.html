@@ -158,6 +158,101 @@
         .skins-source a {
             color: rgba(255, 255, 255, 0.6);
         }
+
+        /* ── Video Modal ── */
+        .skin-card.has-video {
+            cursor: pointer;
+        }
+
+        .skin-card.has-video .skin-img-wrap {
+            position: relative;
+        }
+
+        .skin-card.has-video .skin-img-wrap::after {
+            content: "▶";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0);
+            opacity: 0;
+            transition: opacity 0.2s ease, background 0.2s ease;
+        }
+
+        .skin-card.has-video:hover .skin-img-wrap::after {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .video-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .video-modal-overlay.open {
+            display: flex;
+        }
+
+        .video-modal-box {
+            width: 100%;
+            max-width: 860px;
+            background: #14161c;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-modal-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .video-modal-head span {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .video-modal-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .video-modal-close:hover {
+            color: #ff4655;
+        }
+
+        .video-modal-body {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .video-modal-body iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 
@@ -194,6 +289,19 @@
     <!-- NỘI DUNG SKIN -->
     <div class="container" id="skinsContent">
         <!-- Được render bởi JS -->
+    </div>
+
+    <!-- MODAL VIDEO -->
+    <div class="video-modal-overlay" id="videoModalOverlay">
+        <div class="video-modal-box">
+            <div class="video-modal-head">
+                <span id="videoModalTitle">Giới thiệu skin</span>
+                <button class="video-modal-close" id="videoModalClose" aria-label="Đóng">&times;</button>
+            </div>
+            <div class="video-modal-body">
+                <iframe id="videoModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -274,7 +382,7 @@
                 <div class="row g-4">
                     ${w.skins.map((s, i) => `
                     <div class="col-6 col-md-4 col-lg-3 fade-up" style="animation-delay:${i * 0.08 + 0.1}s">
-                        <div class="skin-card">
+                        <div class="skin-card ${s.video ? 'has-video' : ''}" ${s.video ? `data-video="${s.video}" data-name="${s.name}"` : ''}>
                             <div class="skin-img-wrap">
                                 <img src="${s.image}" alt="${s.name}" loading="lazy">
                             </div>
@@ -288,7 +396,57 @@
                 </div>
             </div>
         `).join('');
+
+            // Gắn sự kiện click cho các thẻ có video
+            container.querySelectorAll('.skin-card.has-video').forEach(card => {
+                card.addEventListener('click', () => {
+                    openVideoModal(card.dataset.video, card.dataset.name);
+                });
+            });
         }
+
+        // ── Modal video ──
+        const videoOverlay = document.getElementById('videoModalOverlay');
+        const videoFrame = document.getElementById('videoModalFrame');
+        const videoTitle = document.getElementById('videoModalTitle');
+
+        function extractYoutubeId(url) {
+            // Hỗ trợ nhiều dạng link: watch?v=, youtu.be/, embed/
+            const patterns = [
+                /(?:youtube\.com\/watch\?v=)([^&]+)/,
+                /(?:youtu\.be\/)([^?]+)/,
+                /(?:youtube\.com\/embed\/)([^?]+)/
+            ];
+            for (const p of patterns) {
+                const match = url.match(p);
+                if (match) return match[1];
+            }
+            return null;
+        }
+
+        function openVideoModal(url, name) {
+            const videoId = extractYoutubeId(url);
+            if (!videoId) {
+                console.error('Không đọc được ID video từ link:', url);
+                return;
+            }
+            videoTitle.textContent = name || 'Giới thiệu skin';
+            videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            videoOverlay.classList.add('open');
+        }
+
+        function closeVideoModal() {
+            videoOverlay.classList.remove('open');
+            videoFrame.src = ''; // dừng video khi đóng
+        }
+
+        document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
+        videoOverlay.addEventListener('click', (e) => {
+            if (e.target === videoOverlay) closeVideoModal(); // click ra ngoài box thì đóng
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeVideoModal();
+        });
 
         function renderSource(data) {
             const links = data.sources.map(s => `<a href="${s.link}" target="_blank" rel="noopener">${s.name}</a>`).join(' · ');
