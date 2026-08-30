@@ -24,14 +24,17 @@
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
           "image": "https://valorantinfo.com/images/us/rogue-vandal_valorant_full_skin_3072364.webp",
-          "video": "https://www.youtube.com/watch?v=p3o3e2WKIuY"
+          "video": "https://www.youtube.com/watch?v=p3o3e2WKIuY&t=2s",
+          "videoEnd": 44
         },
         {
           "name": "Xerofang Vandal",
           "tier": "Deluxe",
           "tierClass": "tier-deluxe",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/xerofang-vandal_valorant_full_skin_1230030.webp"
+          "image": "https://valorantinfo.com/images/us/xerofang-vandal_valorant_full_skin_1230030.webp",
+          "video": "https://www.youtube.com/watch?v=9L3T5VB7zDE&t=53s",
+          "videoEnd": 82
         }
       ]
     },
@@ -44,14 +47,18 @@
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/vn/ayakashi-phantom-level-4variant-1-red_valorant_full_skin_2635062.webp"
+          "image": "https://valorantinfo.com/images/vn/ayakashi-phantom-level-4variant-1-red_valorant_full_skin_2635062.webp",
+          "video": "https://www.youtube.com/watch?v=O9jzhpsmvvM&t=2s",
+          "videoEnd": 44
         },
         {
           "name": "Recon Phantom",
           "tier": "Deluxe",
           "tierClass": "tier-deluxe",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/recon-phantom-level-4variant-1-red-camo_valorant_full_skin_154456.webp"
+          "image": "https://valorantinfo.com/images/us/recon-phantom-level-4variant-1-red-camo_valorant_full_skin_154456.webp",
+          "video": "https://www.youtube.com/watch?v=O9jzhpsmvvM&t=127s",
+          "videoEnd": 185
         }
       ]
     },
@@ -64,14 +71,18 @@
           "tier": "Deluxe",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/vn/gaias-vengeance-guardian_valorant_full_skin_200272.webp"
+          "image": "https://valorantinfo.com/images/vn/gaias-vengeance-guardian_valorant_full_skin_200272.webp",
+          "video": "https://www.youtube.com/watch?v=xpxhBKiPdiw&t=382s",
+          "videoEnd": 407
         },
         {
           "name": "Kuronami Guardian",
           "tier": "Deluxe",
           "tierClass": "tier-deluxe",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/vn/kuronami-guardian_valorant_full_skin_3023550.webp"
+          "image": "https://valorantinfo.com/images/vn/kuronami-guardian_valorant_full_skin_3023550.webp",
+          "video": "https://www.youtube.com/watch?v=a2epA6fDrSs&t=3s",
+          "videoEnd": 39
         }
       ]
     },
@@ -84,14 +95,18 @@
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/us/prelude-to-chaos-bulldog_valorant_full_skin_2452083.webp"
+          "image": "https://valorantinfo.com/images/us/prelude-to-chaos-bulldog_valorant_full_skin_2452083.webp",
+          "video": "https://www.youtube.com/watch?v=tKOxn4eKScQ",
+          "videoEnd": 37
         },
         {
           "name": "Aemondir Bulldog",
           "tier": "Deluxe",
           "tierClass": "tier-deluxe",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/aemondir-bulldog-level-3variant-3-obsidian_valorant_full_skin_1454594.webp"
+          "image": "https://valorantinfo.com/images/us/aemondir-bulldog-level-3variant-3-obsidian_valorant_full_skin_1454594.webp",
+          "video": "https://www.youtube.com/watch?v=a2epA6fDrSs&t=102s",
+          "videoEnd": 134
         }
       ]
     },
@@ -104,14 +119,18 @@
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/us/blackthorn-classic_valorant_full_skin_2875101.webp"
+          "image": "https://valorantinfo.com/images/us/blackthorn-classic_valorant_full_skin_2875101.webp",
+          "video": "https://www.youtube.com/watch?v=4TtvW3JRhCk&t=3s",
+          "videoEnd": 39
         },
         {
           "name": "Divergence Classic",
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/divergence-classic-level-4variant-2-blue_valorant_full_skin_2238838.webp"
+          "image": "https://valorantinfo.com/images/us/divergence-classic-level-4variant-2-blue_valorant_full_skin_2238838.webp",
+          "video": "https://www.youtube.com/watch?v=hTNBEqabZlU&t=120s",
+          "videoEnd": 177
         }
       ]
     },
@@ -124,14 +143,18 @@
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/us/neo-frontier-shorty_valorant_full_skin_3330056.webp"
+          "image": "https://valorantinfo.com/images/us/neo-frontier-shorty_valorant_full_skin_3330056.webp",
+          "video": "https://www.youtube.com/watch?v=6dXOC5nTlig&t=38s",
+          "videoEnd": 64
         },
         {
           "name": "Araxys Shorty",
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/araxys-shorty-level-4variant-2-black_valorant_full_skin_609615.webp"
+          "image": "https://valorantinfo.com/images/us/araxys-shorty-level-4variant-2-black_valorant_full_skin_609615.webp",
+          "video": "https://www.youtube.com/watch?v=RmoqJFWC3xk&t=210s",
+          "videoEnd": 240
         }
       ]
     },
@@ -144,14 +167,18 @@
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/us/valiant-hero-ghost_valorant_full_skin_1053027.webp"
+          "image": "https://valorantinfo.com/images/us/valiant-hero-ghost_valorant_full_skin_1053027.webp",
+          "video": "https://www.youtube.com/watch?v=2z0XDVsIwXk",
+          "videoEnd": 28
         },
         {
           "name": "Ego Ghost",
           "tier": "Deluxe",
           "tierClass": "tier-deluxe",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/ego-ghost-level-2variant-1-red_valorant_full_skin_154682.webp"
+          "image": "https://valorantinfo.com/images/us/ego-ghost-level-2variant-1-red_valorant_full_skin_154682.webp",
+          "video": "https://www.youtube.com/watch?v=EXOWbeOI2qk&t=98s",
+          "videoEnd": 131
         }
       ]
     },
@@ -164,14 +191,18 @@
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Vàng",
-          "image": "https://valorantinfo.com/images/us/imperium-sheriff_valorant_full_skin_945910.webp"
+          "image": "https://valorantinfo.com/images/us/imperium-sheriff_valorant_full_skin_945910.webp",
+          "video": "https://www.youtube.com/watch?v=hQBqK-w2EIc",
+          "videoEnd": 86
         },
         {
           "name": "Ora by OneTap Sheriff",
           "tier": "Exclusive",
           "tierClass": "tier-exclusive",
           "tierColor": "Tím",
-          "image": "https://valorantinfo.com/images/us/ora-by-onetap-sheriff_valorant_full_skin_2543655.webp"
+          "image": "https://valorantinfo.com/images/us/ora-by-onetap-sheriff_valorant_full_skin_2543655.webp",
+          "video": "https://www.youtube.com/watch?v=0piBjIlU4oQ&t=29",
+          "videoEnd": 52
         }
       ]
     },

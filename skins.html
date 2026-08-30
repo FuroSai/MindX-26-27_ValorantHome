@@ -346,6 +346,19 @@
             location.reload();
         }
 
+        // ── Modal video: gắn sự kiện bằng EVENT DELEGATION trên container cha ──
+        // Lý do: gắn từng listener lên mỗi thẻ con sẽ bị MẤT nếu sau đó
+        // container.innerHTML bị ghi đè lại (ví dụ renderSource() dùng +=),
+        // vì thao tác đó tạo ra các DOM node hoàn toàn mới.
+        // Gắn 1 listener duy nhất trên #skinsContent thì luôn hoạt động,
+        // bất kể bên trong nó bị render lại bao nhiêu lần.
+        const skinsContentEl = document.getElementById('skinsContent');
+        skinsContentEl.addEventListener('click', (e) => {
+            const card = e.target.closest('.skin-card.has-video');
+            if (!card) return;
+            openVideoModal(card.dataset.video, card.dataset.name, card.dataset.videoEnd);
+        });
+
         // ── Render nội dung từ skins.json ──
         fetch('skins.json')
             .then(res => {
@@ -382,7 +395,7 @@
                 <div class="row g-4">
                     ${w.skins.map((s, i) => `
                     <div class="col-6 col-md-4 col-lg-3 fade-up" style="animation-delay:${i * 0.08 + 0.1}s">
-                        <div class="skin-card ${s.video ? 'has-video' : ''}" ${s.video ? `data-video="${s.video}" data-name="${s.name}"` : ''}>
+                        <div class="skin-card ${s.video ? 'has-video' : ''}" ${s.video ? `data-video="${s.video}" data-name="${s.name}" data-video-end="${s.videoEnd || ''}"` : ''}>
                             <div class="skin-img-wrap">
                                 <img src="${s.image}" alt="${s.name}" loading="lazy">
                             </div>
@@ -396,13 +409,8 @@
                 </div>
             </div>
         `).join('');
-
-            // Gắn sự kiện click cho các thẻ có video
-            container.querySelectorAll('.skin-card.has-video').forEach(card => {
-                card.addEventListener('click', () => {
-                    openVideoModal(card.dataset.video, card.dataset.name);
-                });
-            });
+            // Không cần gắn listener ở đây nữa — đã gắn 1 lần duy nhất
+            // bằng event delegation ở trên (skinsContentEl.addEventListener).
         }
 
         // ── Modal video ──
@@ -424,14 +432,26 @@
             return null;
         }
 
-        function openVideoModal(url, name) {
+        function extractStartSeconds(url) {
+            // Hỗ trợ ?t=15s hoặc ?t=15 hoặc ?start=15 (link share của YouTube hay có t=)
+            const match = url.match(/[?&](?:t|start)=(\d+)s?/);
+            return match ? match[1] : null;
+        }
+
+        function openVideoModal(url, name, endSeconds) {
             const videoId = extractYoutubeId(url);
             if (!videoId) {
                 console.error('Không đọc được ID video từ link:', url);
                 return;
             }
+            const start = extractStartSeconds(url);
+
+            let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            if (start) embedUrl += `&start=${start}`;
+            if (endSeconds) embedUrl += `&end=${endSeconds}`;
+
             videoTitle.textContent = name || 'Giới thiệu skin';
-            videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            videoFrame.src = embedUrl;
             videoOverlay.classList.add('open');
         }
 
@@ -450,9 +470,9 @@
 
         function renderSource(data) {
             const links = data.sources.map(s => `<a href="${s.link}" target="_blank" rel="noopener">${s.name}</a>`).join(' · ');
-            document.getElementById('skinsContent').innerHTML += `
+            document.getElementById('skinsContent').insertAdjacentHTML('beforeend', `
             <div class="skins-source">${data.sourceLabel}: ${links}</div>
-        `;
+        `);
         }
     </script>
 </body>
